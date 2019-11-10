@@ -1,0 +1,12 @@
+mixin s-articles()
+	// start s-articles
+	+b.s-articles.section#s-articles&attributes(attributes)
+		.container
+			.row
+				- for (var x = 1; x < 4; x++)
+					.col-lg-4
+						+e.item.bg-wrap(href="#")
+							+pic(`news-${x}.jpg`,'bg','lazy')(class="picture-bg")
+							+e.DIV.date 23.02.2019
+							+e.DIV.text Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Даже рот, напоивший злых первую себя вопроса мир они буквоград.
+	// end s-articles

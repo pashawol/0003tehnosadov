@@ -1,0 +1,57 @@
+
+mixin form-search()
+	+b.form-search
+		form
+			input(type="text" placeholder="Что будем искать?")
+			button 
+				+icon("search")
+mixin top-line()
+	// start .top-line
+	+b.top-line.block-with-lazy
+		.container
+			.row
+				.col-lg-auto.col-sm
+					+e.logo(href="#")
+						img(src="img/svg/logo.svg", alt="")
+				
+				.col-xl.order-xl-0.order-last
+					+form-search
+				.col-xl-auto.col-lg.col-auto
+					+b.city-block
+						+icon("mark")
+						+e.text.d-none.d-lg-block Москва
+				.col-auto
+					+b.tel-top(href="tel:+74951208090")
+						+icon("tel")
+						div.d-none.d-xl-block
+							+e.DIV.text +7 495 120 80 90
+							+e.DIV.small пн.-вс. с 10:00 до 21:00
+				.col-auto
+					+e.link
+						+icon("login")
+						+e.DIV.link-text.strong.d-none.d-lg-block Кабинет
+
+				.col-auto
+					+e.link
+						+e.icon-wrap
+							+icon("compare")
+							+e.link-count--compare 99
+						+e.DIV.link-text.strong.d-none.d-lg-block Сравнения
+	
+				.col-auto
+					+e.link--basket
+						+e.icon-wrap
+							+icon("basket")
+							+e.link-count--basket 99
+						+e.DIV.link-text--basket.strong.d-none.d-lg-block Корзина
+							+e.price 999 999 999 руб.
+
+				.col-auto.d-xl-none
+					+b.toggle-search--js
+						+icon('search')
+				
+				.col-auto.d-xl-none
+					+b.toggle-menu-mobile--js
+						span
+				
+	// end .top-line

@@ -1,0 +1,29 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-categories-link/_s-categories-link.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-articles/_s-articles.pug
+include ../blocks/s-map/_s-map.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Main'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	+header-block()
+	+s-categories-link
+	+s-catalog
+	+s-catalog-2
+	+s-content()
+	+s-articles
+	+s-map()
+	+s-form
+	+footer()

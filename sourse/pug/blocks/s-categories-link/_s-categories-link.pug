@@ -1,0 +1,24 @@
+mixin s-categories-link()
+	// start s-categories-link
+	+b.s-categories-link.section#s-categories-link&attributes(attributes)
+		.container
+			.row
+				-
+					var nav= [
+						'Продукция STIHL и Viking',
+						'Техника для сада',
+						'Строительный инструмент',
+						'Садовый инвентарь',
+						'Водоснабжение и полив',
+						'Энергоснабжение',
+						'Сварочное оборудование',
+						'Средства защиты',
+						'Расходные материалы',
+					]
+				each linkName in nav
+					+e.item.col-xl.col-lg-2.col-sm-4.col-6(href="#")
+						+e.DIV.img-wrap
+							img.res-i(src=`img/svg/category-i-${nav.indexOf(linkName) + 1}.svg`, alt="")
+						+e.DIV.title= linkName
+						
+	// end s-categories-link

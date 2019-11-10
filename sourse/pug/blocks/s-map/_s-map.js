@@ -1,0 +1,5 @@
+JSCCommons-map();
+	s-map() {
+
+	}
+	

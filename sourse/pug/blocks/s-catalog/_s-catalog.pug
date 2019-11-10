@@ -1,0 +1,107 @@
+mixin stars()
+	+b.stars
+		+icon('star')
+		+icon('star')
+		+icon('star')
+		+icon('star')
+		+icon('star','star-alt')
+		| (4)
+mixin prod(sl,i="1",t="Погружной насос для чистой воды Metabo TP 8000 S 0250800000",pr="4 300 руб.",oldpr="3 870 руб.")
+	+b.prod-item
+		+e.img-wrap
+			block
+			if sl != 'col'
+				+e.add-compare
+					+icon("compare")
+			a(href="#")
+				+e.gift
+					img(src="img/svg/Gift_icon.svg", alt="")
+				if sl== "sl"
+					img.res-i(src="#" data-lazy=`img/@2x/prod-${i}.jpg`, alt="")
+				else
+					img.res-i.lazy(src="#" data-src=`img/@2x/prod-${i}.jpg`, alt="")
+		+e.caption
+
+			+e.row.row
+				.col
+					+stars()
+				if sl != 'col'
+					.articul.col-auto.small.fw-500 Арт: 10001244
+			+e.title 
+				a(href="#")= t
+			if oldpr
+				+e.old-price= oldpr
+			else
+				if sl != 'col'
+					.small.fw-500 ЦЕНА
+			+e.price= pr
+			if !oldpr
+					+e.credit В кредит от 1 787 руб/месяц 
+			+e.btn-wrap
+				if sl == 'col'
+					+e.add-compare
+						+icon("compare")
+				+e.btn--basket(href="#")
+					+icon("basket-plus")
+					| Купить
+				if sl != 'col'
+					+e.btn--one-click(href="#") Купить в&nbsp;1&nbsp;клик
+mixin s-catalog()
+	// start s-catalog
+	+b.SECTION.s-catalog--stock.pt-0.section&attributes(attributes)
+		+e.head.bg-danger
+			.container
+				.row
+					.col 
+						h2 Текущие акции
+					.col-auto
+						+b.arrow-wrap
+		.container
+			+e.slider-3--js
+				- for (var x = 0; x < 5; x++)
+					+e.slide--gor
+						+prod('sl','1','Погружной насос для чистой воды Metabo TP 8000 S 0250800000') 
+							+b.prod-labels
+								+e.item--stock Скидка
+								+e.item--hit Хит продаж
+	// end s-catalog
+mixin s-catalog-2()
+	// start s-catalog
+	+b.SECTION.s-catalog--new.pt-0.section&attributes(attributes)
+		+e.head.bg-body
+			.container
+				.row
+					.col 
+						h2 Новинки магазина
+					.col-auto
+						+b.arrow-wrap
+		.container
+			+e.slider-6--js
+				+e.slide--gor
+					+prod('sl',2,'Снегоуборщик Yanis Blizzard ME24DL','42 900 руб.','')
+						+b.prod-labels
+							+e.item--stock Скидка
+							+e.item--hit Хит продаж
+				- for (var y = 0; y < 2; y++)
+					- for (var x = 0; x < 5; x++)
+						+e.slide--gor
+							+prod('sl',x + 3,'Снегоуборщик Yanis Blizzard ME24DL','42 900 руб.','') 
+					
+	// end s-catalog
+mixin s-catalog-3()
+	// start s-catalog
+	+b.s-catalog.pt-0.section&attributes(attributes)
+		+e.control
+			form
+				label
+					strong Сортировать:
+					select
+						option Сначала дешёвые
+						option Сначала дорогие
+		+e.row.row  
+			- for (var y = 0; y < 5; y++)
+				- for (var x = 0; x < 5; x++)
+					+e.col.col-xxl.col-lg-4.col-sm-6
+						+prod('col',x + 3,'Бензопила STIHL MS 260-16" 11212000423','30 990 руб.','') 
+					
+	// end s-catalog

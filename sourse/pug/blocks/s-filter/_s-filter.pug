@@ -1,0 +1,56 @@
+mixin s-filter()
+	button.s-filter__btn.s-filter__btn--js.btn.btn-block.btn-info.d-lg-none.mb-3.ttu(type='button')
+		| Фильтр товаров
+	.s-filter-wrap.d-lg-flex
+			
+		.strong Параметры
+		// start s-filter
+		+b.s-filter&attributes(attributes) 
+			mixin range(c1, c2)
+				.range-wrap
+					input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+					.row
+						.col-6 
+							strong от 
+							+b.SPAN.range-result--minus.minus
+						.col-6 
+							strong до 
+							+b.SPAN.range-result--plus.plus
+
+			mixin  group(t)
+				+e.group.small
+					+e.title.small.showhide.active= t 
+					.showhide-all
+						block
+				// +e.group
+			+group('Цена')
+				+range("30900","116490")
+		
+			+group('Объем двигателя (см3.)')
+				+range("20","90")
+			
+			+group('Максимальная мощность (л.с.)')
+				+range("1","90")
+			+group('Мощность (кВт)')
+				+range("1855","2351")
+			+group('Страна сборки')
+				+in-c("checkbox","Бразилия")
+				+in-c("checkbox","Германия")
+				+in-c("checkbox","США")
+				+in-c("checkbox","Китай")
+				
+			+group('Картер двигателя')
+				+in-c("checkbox","Алюминиевый")
+				+in-c("checkbox","Магниевый")
+				+in-c()
+					+e.SPAN.text Пластмассовый 
+			+group('Применение ')
+				+in-c("checkbox","Бытовое")
+				+in-c("checkbox","Полупрофессиональное")
+				+in-c() 
+					+e.SPAN.text Профессиональное
+			+e.group
+				+e.BUTTON.btn(tyope="button") Сбросить фильтры
+
+
+		// end s-filter

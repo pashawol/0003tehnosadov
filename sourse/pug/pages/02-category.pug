@@ -1,0 +1,28 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-categories-link/_s-categories-link.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-articles/_s-articles.pug
+include ../blocks/s-map/_s-map.pug
+include ../blocks/s-categories/_s-categories.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Продукция STIHL и Viking'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	+breadcrumb('Главная',title)
+	+b.page-title.container
+		h1= title 
+	+s-categories
+	+s-content('Продукция Stihl','С момента своего основания компания STIHL делает ставку на революционные идеи и разработки. За 90-летнюю историю имя компании стало синонимом передовых технологий. Сегодня во всем мире марка STIHL означает высокое качество продукции и обслуживания. Более чем в 160 странах мира продукция нашей компании помогает людям в их работе - это сделало STIHL ведущим производителем бензопил в мире.')
+	+s-form
+	+footer()

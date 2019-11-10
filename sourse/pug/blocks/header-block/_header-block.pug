@@ -1,0 +1,16 @@
+mixin header-block()
+	// start header-block
+	+b.header-block#header-block
+
+		.container
+			+e.slider--js
+				- for (var x = 0; x < 6; x++)
+					+e.slide.bg-wrap
+						picture.picture-bg
+							img.object-fit-js(src="#" data-lazy="img/@2x/slide.jpg", alt="") 
+						+e.caption
+							+e.text-block
+								+e.title Культиватор Yanis Angry
+								p Мотоблок Yanis Angry, является мотоблоком средних размеров и имеет оптимальное исполнение для загородного участка площадью в 15-30 соток 
+							+e.btn(href="#") Подробнее
+	// end header-block
