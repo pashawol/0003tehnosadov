@@ -1,0 +1,39 @@
+mixin s-basket()
+	// start s-basket
+	+b.s-basket#s-basket&attributes(attributes)
+		.container
+			+e.head.panel-white.d-none.d-lg-block
+				.row
+					+e.col.col Товар
+					+e.col.col-auto Артикул
+					+e.col.col-auto Количество
+					+e.col.col-auto Вес,  кг
+					+e.col.col-auto Цена, руб.
+					+e.col.col-auto Сумма, руб. 
+					+e.col.col-auto
+			mixin item(i)
+				+e.item.panel-white
+					.row
+						+e.col.col-lg
+							.row
+								.col-auto
+									+e.img-wrap(href="#")
+										img.res-i(src=`img/@2x/prod-${i}.jpg`, alt="")
+								.col
+									a(href="#").text-body Бензопила STIHL MS 260-16" 11212000423
+						+e.col.col-lg-auto(data-title="Артикул") ТС-181222
+						+e.col.col-lg-auto(data-title="Количество")
+							+b.block-add
+								input(type="number"  value="1")
+								+e.btn-wrap
+									+e.BUTTON.btn--plus(type="button")
+									+e.BUTTON.btn--minus(type="button")
+						+e.col.col-lg-auto(data-title="Вес,  кг") 4.8
+						+e.col.col-lg-auto(data-title=" Цена, руб.") 30 990
+						+e.col.col-lg-auto(data-title="Сумма, руб. ") 61 980
+						+e.col.col-lg-auto
+							+e.delete
+								+icon("delete")
+			+item("1")
+			+item("2")
+	// end s-basket

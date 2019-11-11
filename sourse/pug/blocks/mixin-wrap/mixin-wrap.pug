@@ -202,50 +202,54 @@ mixin pic2({i, bg, lazy="lazy", media='576px'})
 		+src(i, exp,smpath2, lazy,"",bg) 
 	// /picture
 
-//- mixin img( i, bg, lazy="lazy", media='576px')
-//- 	-
-//- 		const smpath2 = "2x"
-//- 		const smpath1 = "1x"
-//- 		let expArr = i.split(".")
-//- 		let exp = (expArr[1] || 'jpg')  
-//- 		const url1= `img/@${smpath1}/${expArr[0]}.${exp}`
-//- 		const url2= `img/@${smpath2}/${expArr[0]}.${exp}`
-//- 		const ifLazy = (lazy== "lazy")
-//- 		const src = ( ifLazy ? "#" : url2)
-//- 		const data2 = (ifLazy ?  url2  : null)
-//- 		const data1 = (ifLazy ?  url1  : null)
-//- 	img(
-//- 		class= (lazy +' res-i ' + (bg=="bg" ? "object-fit-js": '') )  
-//- 		src=src  
-//- 		data-src=(data1)   
-//- 		sizes="(max-width: 576px) 0, 100%"
-//- 		data-srcset=(media != 0 ? (data1 + " " + '0, '+ data2 + " 100% " ) : null))&attributes(attributes)
-		//- "img/@1x/real.jpg 1x, img/@2x/real.jpg 2x"
-	//- if media !== 0  
-	//- 	each val2 in [smpath2,smpath1] 
-	//- 	+src(i,exp,val2,lazy)(data-srcset=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
-	//- else 
-	//- 	+src(i,'webp',smpath2+`/webp`,lazy) 
+mixin stars()
+	+b.stars
+		+icon('star')
+		+icon('star')
+		+icon('star')
+		+icon('star')
+		+icon('star','star-alt')
+		| (4)
+mixin prod(sl,i="1",t="Погружной насос для чистой воды Metabo TP 8000 S 0250800000",pr="4 300 руб.",oldpr="3 870 руб.")
+	+b.prod-item
+		+e.img-wrap
+			block
+			if sl != 'col'
+				+e.add-compare
+					+icon("compare")
+			a(href="#")
+				+e.gift
+					img(src="img/svg/Gift_icon.svg", alt="")
+				if sl== "sl"
+					img.res-i(src="#" data-lazy=`img/@2x/prod-${i}.jpg`, alt="")
+				else
+					img.res-i.lazy(src="#" data-src=`img/@2x/prod-${i}.jpg`, alt="")
+		+e.caption
 
- 
-	
-//- /picture with lazy
-
-
-	//- example
-	//- or
-	//- +piclazy('consult','png')
-//- +pic('','head-img-4',"")
-
-
- 
-		 
-//- /picture
-	example
-	+piclazy('consult','png','bg')
-	or
-	+piclazy('consult','png')
-
+			+e.row.row
+				.col
+					+stars()
+				if sl != 'col'
+					.articul.col-auto.small.fw-500 Арт: 10001244
+			+e.title 
+				a(href="#")= t
+			if oldpr
+				+e.old-price= oldpr
+			else
+				if sl != 'col'
+					.small.fw-500 ЦЕНА
+			+e.price= pr
+			if !oldpr
+					+e.credit В кредит от 1 787 руб/месяц 
+			+e.btn-wrap
+				if sl == 'col'
+					+e.add-compare
+						+icon("compare")
+				+e.btn--basket(href="#")
+					+icon("basket-plus")
+					| Купить
+				if sl != 'col'
+					+e.btn--one-click(href="#") Купить в&nbsp;1&nbsp;клик
 
 mixin ie11()
 	//- modernizer and for ie11

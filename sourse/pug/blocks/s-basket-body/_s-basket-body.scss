@@ -1,0 +1,125 @@
+.s-basket-body {
+		 padding-top: rem(15);
+	.panel-white{
+		margin-bottom: rem(18);
+		position: relative;
+		padding: rem(15) rem(11);
+		.row{
+			align-items: center;
+			@include roww(5);
+		}
+	}
+	font-weight: 500;
+	&__btn-delete{
+		font-weight: 500;
+		@extend .btn;
+		@extend .btn-outline-body;
+		@extend .btn-block;
+		border-width: 1px;
+	}
+	.btn.h1{
+		@extend .h1;
+		font-weight: bold;
+		// margin-top: 20px;
+		margin-bottom: rem(20);
+	}
+	.row{
+		@include roww(5);
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+}
+
+.gift-item{
+	display: block;
+	cursor: pointer;
+	.row{
+		align-items: center;
+	}
+	&:not(:last-child){
+
+		border-bottom: 1px solid #dddddd;
+	}
+	padding: rem(11);
+	&__img-wrap{
+		display: block;
+		@include media-breakpoint-up(sm) {
+
+			width: rem(100px);
+			height: rem(100px);
+		}
+		width: rem(60);
+		height: rem(60);
+		text-align: center;
+		img{
+			@extend .res-i;
+			max-height: 100%;
+		}
+	}
+	input{
+		@extend .invisible;
+	}
+	&__lab{
+		@include media-breakpoint-up(xl) {
+
+			margin-right: rem(20);
+		} 
+		left: 0;
+		display: block;
+		top: rem(-8); 
+		@include media-breakpoint-up(sm) {
+
+			width: rem(42);
+			height: rem(42);
+		}
+		width: rem(32);
+		height: rem(32);
+		border-radius: 5px;
+		background-color: #ffffff;
+		border: 1px solid #dddddd;
+		@include mt;
+		position: relative;
+		&::after{  
+			content:  '';
+			position: absolute;
+			@include a-cent; 
+			opacity: 0;
+			height: 100%;
+			width: 100%;
+			background-image:  url(../img/svg/Vector.svg);
+			background-size: rem(20);
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+
+	}
+	input:checked + &__lab{ 
+		 
+		&::after{
+	
+			opacity: 1;
+		}
+	}
+}

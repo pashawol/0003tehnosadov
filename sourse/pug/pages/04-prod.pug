@@ -1,0 +1,31 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-categories-link/_s-categories-link.pug
+include ../blocks/s-catalog/_s-catalog.pug
+include ../blocks/s-articles/_s-articles.pug
+include ../blocks/s-map/_s-map.pug
+include ../blocks/s-categories/_s-categories.pug
+include ../blocks/s-filter/_s-filter.pug
+include ../blocks/s-prod-head/_s-prod-head.pug
+include ../blocks/s-prod-body/_s-prod-body.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Бензопила STIHL MS 260-16" 11212000423'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	+breadcrumb('Главная','Продукция STIHL и Viking','Цепные пилы',title)
+	+b.page-title.container
+		h1= `${title}` 
+	+s-prod-head
+	+s-prod-body
+	+s-form
+	+footer()

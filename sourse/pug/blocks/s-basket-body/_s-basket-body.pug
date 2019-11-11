@@ -1,0 +1,30 @@
+mixin s-basket-body()
+	// start s-basket-body
+	+b.SECTION.s-basket-body.section&attributes(attributes)
+		.container
+			.row
+				.col-lg-9
+					.panel-white.h5.strong Выберите подарок:
+					.panel-white.p-0
+						- for (var x = 0; x < 5; x++)
+							+b.LABEL.gift-item
+								span.row
+									span.col-auto
+										+e.img-wrap
+											img(src="img/@2x/gift.jpg", alt="")
+									span.col Моторное масло Yanis Premium Garden Motor Oil 4T SAE10W30SJ-SH/ CF, 1л
+									span.col-auto
+										input(type="checkbox")
+										+e.lab
+				.col
+					+b.form-wrap.panel-white
+						p.strong Я знаю промокод:
+						+input()
+						button.btn.btn-body.btn-block(type="submit") Применить
+					.panel-white
+						.row.strong.mb-2
+							.col Итого:
+							.col-auto.h1.strong.text-danger 104 880 руб.
+						button.btn.btn-primary.btn-block.h1(type="submit") Оформить
+						+e.btn-delete(type="submit") Очистить корзину
+	// end s-basket-body

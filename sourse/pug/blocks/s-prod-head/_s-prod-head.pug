@@ -1,0 +1,118 @@
+mixin s-prod-head()
+	// start s-prod-head
+	+b.SECTION.s-prod-head.section#s-prod-head&attributes(attributes)
+		.container
+			.row
+				+e.col-slider.col 
+					+e.slider--lg.--lg-js
+						- for (var x = 0; x < 7; x++)
+							+e.slide--lg
+								+e.img-wrap--lg(href="img/@2x/prod-slide.jpg" data-fancybox)
+									img.res-i(src="#" data-lazy="img/@2x/prod-slide.jpg", alt="")
+							// /+e.slide
+				+e.col.col-xl-auto.order-xl-first
+					+e.slider--sm-wrap
+						+e.slider--sm.--sm-js
+							- for (var x = 0; x < 7; x++)
+								+e.slide--sm
+									+e.img-wrap--sm
+										img.res-i(src="#" data-lazy="img/@2x/prod-slide.jpg", alt="")
+								// /+e.slide
+				+e.caption.col
+					.row
+						.col-md-6.pt-2
+							.row.mb-3
+								.col-6.strong Рейтинг
+								.col-6
+									+stars()
+							.row.mb-3
+								.col-6.strong Производитель 
+								.col-6 Stihl
+							.row.mb-4
+								.col-6.strong Артикул
+								.col-6 ТС-181222
+							.row.mb-3
+								.col
+									.fw-500 ЦЕНА
+									.fw-500.strike.text-orange 29 990 руб.
+									.h1.strong 9 000 000 руб.
+								.col-auto
+									+b.block-add
+										input(type="number"  value="1")
+										+e.btn-wrap
+											+e.BUTTON.btn--plus(type="button")
+											+e.BUTTON.btn--minus(type="button")
+							+e.btn.btn-success.ttu(href="#")
+								+icon('basket-plus')
+								| в корзину
+							
+							+e.btn.btn-outline-success(href="#") Купить в 1 клик
+							.text-center.fw-500.pt-2.mb-4 Кредит всего от 1 292 руб./месяц
+							+e.links
+								+e.link(href="#")
+									+e.icon-wrap
+										+icon('credit-cards-payment')
+									| Условия кредитования и рассрочки
+								br
+								+e.link(href="#")
+									+e.icon-wrap
+										+icon('help')
+									| Как заказать?
+								br
+								+e.link(href="#")
+									+e.icon-wrap
+										+icon('barcode')
+									| Получить прайс
+								br
+								
+						.col-md-6
+							.panel-white
+								table
+									tr
+										th Доставка:
+										td 1-2 дня
+									
+									tr
+										th Магазин Дмитровка:
+										td 
+											.text-success.strong В наличии
+									
+									tr
+										th Магазин Пушкино:
+										td 
+											.text-success.strong В наличии
+									
+									tr
+										th Наличие на складе:
+										td 
+											.text-success.strong В наличии
+							+b.panel-white
+								.strong.mb-3 Варинаты доставки
+								+e.item
+									+e.icon-wrap: +icon('shipping-1')
+									+e.text Курьерская доставка  по&nbsp;Москве
+										.strong от&nbsp;200 до&nbsp;500&nbsp;руб.
+								
+								+e.item
+									+e.icon-wrap: +icon('shipping-2')
+									+e.text Доставка по России
+										.strong от&nbsp;500&nbsp;руб.
+								
+								+e.item
+									+e.icon-wrap: +icon('shipping-3')
+									+e.text Самовывоз
+										.strong от&nbsp;250&nbsp;руб.
+								.small.mb-3 При заказе от&nbsp;
+									strong 5&nbsp;000&nbsp;руб. 
+									| 
+									| доставка 
+									| 
+									span.text-primary бесплатная
+									| 
+									| . Точную стоимость доставки уточняйте у&nbsp;менеджера.
+								.row
+									.col-auto
+										a.text-orange.tdu(href="#") Доставка
+									.col-auto
+										a.text-orange.tdu(href="#") Оплата
+	// end s-prod-head

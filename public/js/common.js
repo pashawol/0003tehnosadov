@@ -315,6 +315,36 @@ function eventHandler() {
 				arrows: true
 			}
 		}]
+	})); //  слайдер в  карточке товара
+
+	$(' .s-prod-head__slider--lg-js').slick(_objectSpread({}, defaultSlide, {
+		dots: true,
+		infinite: false,
+		asNavFor: $(' .s-prod-head__slider--sm-js'),
+		arrows: false
+	}));
+	$('.s-prod-head__slider--sm-js').slick(_objectSpread({}, defaultSlide, {
+		infinite: false,
+		slidesToShow: 4,
+		dots: false,
+		arrows: false,
+		vertical: false,
+		verticalSwiping: false,
+		focusOnSelect: true,
+		asNavFor: $('.s-prod-head__slider--lg-js'),
+		responsive: [{
+			breakpoint: 1199,
+			settings: {
+				slidesToShow: 5,
+				vertical: true,
+				verticalSwiping: true
+			}
+		}, {
+			breakpoint: 767,
+			settings: {
+				slidesToShow: 6
+			}
+		}]
 	})); // $('.s-gal__slider\
 	// ,.slider-for2 ')
 	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {

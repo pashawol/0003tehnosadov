@@ -1,0 +1,27 @@
+mixin s-why()
+	// start s-why
+	+b.SECTION.s-why.section#s-why&attributes(attributes)
+		+e.head.bg-danger
+			.container
+				h2 Почему стоит оформить заказ у нас?
+		.container
+			.panel-white.text-center
+				.row
+					-
+						var nav= {
+							"Удобная доставка":"Мы предлагаем широкий выбор способов получения заказа",
+							"Самовывоз":"В Москве и Московской области",
+							"Удобная оплата":"5 вариантов оплаты на Ваш выбор",
+							"Гарантия":"Качественное  гарантийное и сервисное обслуживание",
+							"Сборка товара":"Сборка культиваторов, снегоуборщиков и другой крупной техники",
+							"Онлайн-кредит":"Просто и быстро: понадобится только паспорт",
+						}
+				 
+					each  text, linkName in nav
+						+e.item.col-xl-2.col-sm-4.col-sm-6
+							+e.DIV.img-wrap
+									img.res-i(src=`img/svg/why-${Object.keys(nav).indexOf(linkName)  + 1}.svg`, alt="")
+								
+							+e.DIV.title.h5.strong= linkName
+							p= text
+	// end s-why

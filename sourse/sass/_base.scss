@@ -514,3 +514,10 @@ h1,h2{
 .row--sm{
 	@include roww(4)
 }
+
+.panel-white{
+	border-radius: 5px;
+	border: 1px solid #dddddd;
+	background-color: #ffffff;
+	padding: rem(15) rem(12);
+}
