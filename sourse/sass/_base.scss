@@ -50,7 +50,11 @@ body {
 			opacity: 0.76;
 		}
 	}
+	&.order-body{
+		background-color: #E5E5E5;
+	}
 }
+
  
 .mono {
 	font-family: $font-family-monospace;
@@ -521,3 +525,16 @@ h1,h2{
 	background-color: #ffffff;
 	padding: rem(15) rem(12);
 }
+.panel-white__body,
+.panel-white__head{
+	
+	padding: rem(15) rem(12);
+}
+.border-bottom{
+	border-bottom: 1px solid #dddddd;
+}
+
+.panel-white.p-0
+	.panel-white__head
+	.panel-white__body
+	

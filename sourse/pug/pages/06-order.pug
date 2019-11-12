@@ -1,0 +1,26 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-map/_s-map.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-why/_s-why.pug
+include ../blocks/s-order/_s-order.pug
+
+block variables
+	- let  mainPage= 'order-body'
+block title
+	- let  title= 'Оформление заказа'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	+breadcrumb('Главная',title)
+	+b.page-title.container
+		h1= `${title}`  
+	+s-order
+	+s-form
+	+footer()

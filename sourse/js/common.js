@@ -85,7 +85,7 @@ const JSCCommon = {
 
 	// табы  . 
 	tabscostume(tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+		$('.' + tab + '--js').on('click', '.' + tab + '__btn:not(.active)', function (e) {
 			$(this)
 				.addClass('active').siblings().removeClass('active')
 				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')

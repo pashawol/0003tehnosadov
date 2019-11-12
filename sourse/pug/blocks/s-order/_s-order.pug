@@ -1,0 +1,146 @@
+mixin s-order()
+	// start s-order
+	+b.SECTION.s-order.section#s-order&attributes(attributes)
+		.container 
+			.row-main.row
+				.col
+					+b.form-wrap.panel-white.mb-3
+						.row
+							.col
+								.h5.strong Укажите контактную информацию
+								+input("ФИО*")
+								+input("Телефон*",'tel')
+								+input("E-mail*",'email')
+							.col-4
+								.h5.strong Авторизация
+								button.btn.btn-primary.btn-block.mb-2(type="submit") Войти
+								p Авторизуйтесь на&nbsp;сайте, и&nbsp;мы&nbsp;сохраним всю информацию по&nbsp;заказу и&nbsp;автоматически заполним ваши контактные данные
+					+b.tabs--js
+						+e.caption
+							+e.btn.active Самовывоз
+							+e.btn Доставка по Москве и МО
+							+e.btn Доставка в регионы
+						+e.wrap.panel-white
+							mixin cont()
+								+e.content&attributes(attributes)
+									mixin item(t)
+										+b.store-item
+											+b.LABEL.store-item-head
+												span.row
+													+e.title.col= t
+													strong.col-auto Выбрать этот магазин
+														input(type="radio" name='radio--1[]')
+														+e.lab 
+											+e.body
+												.row
+													.col
+														img.res-i(src="img/@2x/map.jpg", alt="")
+													+e.col.col-xxl-auto.col-4
+														div
+															strong Режим работы: 
+															br
+															| Пн-Пт - с 10:00 до 21:00
+															br
+															| Сб-Вс - с 10:00 до 18:00
+															br
+															br
+															strong Как найти: 
+															br
+															| Станция метро Верхние Лихоборы, перейти Дмитровское шоссе, и двигаться в направлении ТЦ Колизей, вход по правой стороне здания
+														+e.label--black Срок хранения заказа - 3 дня
+									+item("г.Москва, Дмитровское шоссе, д.62, с.5")
+									+item("МО, г.Пушкино, Пушкинское шоссе, д.2")
+										
+							+cont()(class="active")
+							+cont()
+							+cont()
+					+e.panel.panel-white
+						+e.panel-head Способ оплаты
+						+e.panel-body
+							+e.panel-row.row
+								-
+									var nav= {
+										"Наличными":"В магазине при самовывозе товара или курьеру при получении",
+										"Онлайн картой":"Онлайн-оплата через сайт без комиссии",
+										"Кредит":"Онлайн-кредит. Быстрое оформление на сайте банка",
+										"Безналичный по счёту":"Счёт для физических или юридических лиц для оплаты в банке", 
+									}
+							
+								each  text, linkName in nav
+									label.col-lg-3.col-sm-6
+										input(type="radio" name="radio2").panel-input
+										+b.panel-item
+											+e.DIV.img-wrap
+													img.res-i(src=`img/svg/payment-${Object.keys(nav).indexOf(linkName)  + 1}.svg`, alt="")
+												
+											+e.DIV.title.h5.strong= linkName
+											p= text
+					
+					+e.panel.panel-white
+						+e.panel-head Ваш коментарий к заказу
+						+e.panel-body
+							textarea.form-control(placeholder="Ваш коментарий к заказу")
+					+e.panel--btn.panel-white
+						+e.panel-body
+							button.btn.btn-primary.btn-block.mb-4(type="submit") Подтвердить заказ
+							+polite()
+					
+				.col-xl-4
+					+e.panel.panel-white
+						+e.panel-head Состав заказа
+						+e.panel-body.border-bottom
+							table
+								tr
+									td
+										a.img-wrap(href="#")
+											img(src="img/@2x/prod-5.jpg", alt="")
+									td
+										a.text-body(href="#") Бензопила STIHL MS 260-16" 11212000423
+									td 2 шт
+
+							
+								tr
+									td
+										a.img-wrap(href="#")
+											img(src="img/@2x/prod-4.jpg", alt="")
+									td
+										a.text-body(href="#") Снегоуборщик Yanis Blizzard ME24DL
+									td 1 шт
+
+							
+								tr
+									td
+										a.img-wrap(href="#")
+											img(src="img/@2x/prod-5.jpg", alt="")
+									td
+										a.text-body(href="#") 
+											.strong Подарок!
+											| 
+											| Моторное масло Yanis Premium Garden Motor Oil 2T API TC JASO FD ISO-L-EGD, 1л
+									td 2 шт
+
+							
+
+						+e.panel-head Получение и оплата
+						+e.panel-body.border-bottom
+							.strong Получатель:
+							
+							| Иванов Иван Иванович
+							br
+							| +7 900 900 90 90
+							br
+							
+							| ivanovii@yandex.ru
+							br
+							br
+							.strong Способ получения:
+							| Самовывоз, г.Москва, Дмитровское шоссе, д.62, с.5
+							br
+							.strong Оплата:
+							| Наличными в магазине
+							br
+						+e.panel-body
+							.row.align-items-center
+								.col.h5.strong Итого:
+								.col-auto.h1.text-danger.strong 104 880 руб.
+	// end s-order
