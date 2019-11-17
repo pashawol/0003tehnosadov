@@ -1,0 +1,13 @@
+mixin side-menu(t)
+	// start side-menu
+	+b.side-menu
+		if t == '2'
+			+e.A.item(href='#') Доставка
+			+e.A.item.active(href='#') Оплата товара
+			+e.A.item(href='#') Потребительский кредит
+		if t == '3'
+			+e.A.item(href='#') Доставка
+			+e.A.item(href='#') Оплата товара
+			+e.A.item.active(href='#') Потребительский кредит
+
+	// end side-menu

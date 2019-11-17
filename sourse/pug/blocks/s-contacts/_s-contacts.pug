@@ -1,0 +1,56 @@
+mixin s-contacts()
+	// start s-contacts
+	+b.SECTION.s-contacts.section#s-contacts&attributes(attributes)
+		.container
+			+e.contacts-block.panel-white.p-0
+				h1.panel-white__head.border-bottom Контакты
+				.panel-white__body
+					+e.out-row.row
+						.col-xxl-auto
+							+e.in-row.row
+								.col-xxl-auto.col-lg
+									+e.contacts-item
+										+e.contacts-title Телефон
+										+e.A.contacts-text(href='tel:+74951208090') +7 (495) 120-80-90
+									+e.contacts-item
+										+e.contacts-title E-mail
+										+e.A.contacts-text(href='mailto:info@tehnosadov.ru') info@tehnosadov.ru
+								.col-xxl-auto.col-lg-auto
+									+e.contacts-item
+										+e.contacts-title Режим работы интернет-магаизна
+										+e.contacts-text c 10:00 до 20:00 часов
+									+e.contacts-item
+										+e.contacts-title Режим работы колл-центра
+										+e.contacts-text 24/7
+								.col-xxl-auto.col-lg
+									+e.contacts-item
+										+e.contacts-title Доставка
+									+e.contacts-item
+										+e.contacts-text
+											span Пн-Пт:
+											| с 10:00 до 21:00
+									+e.contacts-item
+										+e.contacts-text
+											span Сб-Вс:
+											| с 10:00 до 18:00
+						.col-auto
+							+soc()
+							+e.btn.btn.btn-danger Написать сообщение
+			+e.requisites-block.panel-white.p-0
+				h5.panel-white__head.border-bottom Реквизиты
+				.panel-white__body
+					+e.requisites-text
+						strong ООО «Техносадов»
+					+e.requisites-text
+						strong ОГРН 
+						|	1187746800845
+					+e.requisites-text ИНН 7743273314
+					+e.requisites-text КПП 771301001
+					+e.requisites-text Расчетный счет №40702810037100000151
+					+e.requisites-text в Филиал № 7701 Банка ВТБ (ПАО) г.Москва
+					+e.requisites-text Корр. счет №30101810345250000745
+					+e.requisites-text БИК 044525745
+					+e.requisites-text Юр. адрес: 127474 г.Москва, 
+						strong ш. Дмитровское, д.62, строение 5, этаж 1, помещение X, комната 1
+					
+	// end s-contacts

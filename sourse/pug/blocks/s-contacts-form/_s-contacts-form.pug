@@ -1,0 +1,18 @@
+mixin s-contacts-form()
+	// start s-contacts-form
+	+b.SECTION.s-contacts-form.section#s-contacts-form&attributes(attributes)
+		.container
+			.panel-white.p-0
+				h5.panel-white__head.border-bottom Форма обратной связи
+				.panel-white__body
+					+form-wrap
+						+e.row.row
+							.col-lg-6
+								textarea.form-wrap__input.form-control(placeholder='Ваше сообщение' name='message')
+							.col-lg-6
+								+input('ФИО*','text','','name')(required)
+								+input('Телефон*','tel','','tel')(required)
+								+input('E-mail*','text','','email')(required)
+								+contacts-polite()
+								+e.btn.btn(type="submit") Отправить
+	// end s-contacts-form

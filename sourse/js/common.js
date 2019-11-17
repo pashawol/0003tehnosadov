@@ -1,5 +1,5 @@
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Sub_Category_1920.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Page_Contacts_1920.png);"></div>')
 	// /добавляет подложку для pixel perfect
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -167,6 +167,9 @@ const JSCCommon = {
 	})
 	},
 
+
+
+
 };
 
 function eventHandler() {
@@ -290,6 +293,67 @@ function eventHandler() {
 
 		slidesToShow: 1,
 		dots: true
+	});
+	
+	
+	$('.s-markets__slider--js').slick({
+		...defaultSlide,
+
+		slidesToShow: 2.5,
+		infinite: false,
+		dots: false,
+		arrows: false,
+		mobileFirst: true,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 4.5,
+				}
+				
+			}, 
+			{
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 3.5,
+			}
+	
+		// },
+		// 	{
+	
+		// 	breakpoint: 768,
+		// 	settings: {
+		// 		slidesToShow: 3,
+		// 	}
+	
+		// }, {
+		// 	breakpoint: 576,
+		// 	settings: {
+		// 		slidesToShow: 2,
+		// 		arrows: true,
+		// 	}
+	
+	
+		}],
+	});
+
+	$('.s-markets__more-head').click(function(){
+		$(this).next('.s-markets__more-body').slideToggle(800);
+		$(this).toggleClass('active');
+	});
+
+	$('.page-menu-toggle').click(function(){
+		$(this).next('div').slideToggle(800);
+	});
+	
+	
+	$('.form-wrap__change').click(function(){
+		$(this).siblings('input, textarea').toggleClass('disabled');
+	});
+	
+	$('.acc-settings__change').click(function(){
+		$(this).siblings('input, textarea').toggleClass('off');
+		$(this).siblings('div').toggleClass('d-none');
 	});
 	
 	$('.s-catalog__slider-3--js').slick({
