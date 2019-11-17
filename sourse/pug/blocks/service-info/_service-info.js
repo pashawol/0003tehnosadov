@@ -1,0 +1,5 @@
+JSCCommonservice-info();
+	service-info() {
+
+	}
+	

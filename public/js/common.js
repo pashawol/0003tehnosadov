@@ -7,7 +7,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // добавляет подложку для pixel perfect
-$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Sub_Category_1920.png);"></div>'); // /добавляет подложку для pixel perfect
+$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Page_Contacts_1920.png);"></div>'); // /добавляет подложку для pixel perfect
 
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -264,6 +264,50 @@ function eventHandler() {
 		slidesToShow: 1,
 		dots: true
 	}));
+	$('.s-markets__slider--js').slick(_objectSpread({}, defaultSlide, {
+		slidesToShow: 2.5,
+		infinite: false,
+		dots: false,
+		arrows: false,
+		mobileFirst: true,
+		responsive: [{
+			breakpoint: 1200,
+			settings: {
+				slidesToShow: 4.5
+			}
+		}, {
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 3.5
+			} // },
+			// 	{
+			// 	breakpoint: 768,
+			// 	settings: {
+			// 		slidesToShow: 3,
+			// 	}
+			// }, {
+			// 	breakpoint: 576,
+			// 	settings: {
+			// 		slidesToShow: 2,
+			// 		arrows: true,
+			// 	}
+
+		}]
+	}));
+	$('.s-markets__more-head').click(function () {
+		$(this).next('.s-markets__more-body').slideToggle(800);
+		$(this).toggleClass('active');
+	});
+	$('.page-menu-toggle').click(function () {
+		$(this).next('div').slideToggle(800);
+	});
+	$('.form-wrap__change').click(function () {
+		$(this).siblings('input, textarea').toggleClass('disabled');
+	});
+	$('.acc-settings__change').click(function () {
+		$(this).siblings('input, textarea').toggleClass('off');
+		$(this).siblings('div').toggleClass('d-none');
+	});
 	$('.s-catalog__slider-3--js').slick(_objectSpread({}, defaultSlide, {
 		slidesToShow: 1,
 		appendArrows: $(".s-catalog--stock").find(" .arrow-wrap"),

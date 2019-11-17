@@ -126,11 +126,28 @@
 			// margin-top: rem(5);
 		}
 	}
-
+	
 	&__input[type="radio"] + &__lab{ 
-		border-radius: 50%;
-		&::after{ 
-			border-radius: 50%;
+		// border-radius: 50%;
+		width: rem(42);
+		height: rem(42);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #dddddd;
+		border-radius: rem(5);
+		&::after{
+			content: '';
+			width: rem(20);
+			height: rem(16);
+			background-image: url(../img/svg/Vector.svg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			@include a-cent; 
+			opacity: 0;
+			@include mt;
+			// content:   url(../img/svg/Vector.svg);
 		}
 	}
 

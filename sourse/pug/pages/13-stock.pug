@@ -1,0 +1,43 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-articles/_s-articles.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-map/_s-map.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-why/_s-why.pug
+include ../blocks/s-contacts/_s-contacts.pug
+include ../blocks/s-markets/_s-markets.pug
+include ../blocks/s-contacts-form/_s-contacts-form.pug
+include ../blocks/acc-menu/_acc-menu.pug
+include ../blocks/acc-settings/_acc-settings.pug
+include ../blocks/s-stock/_s-stock.pug
+
+block variables
+	- let  mainPage= 'payment-body'
+block title
+	- let  title= 'Акции'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	+breadcrumb('Главная',title)
+	+b.page-title.container
+		h1= `${title}`
+	+s-stock()
+	+s-articles()
+	//- .container
+	//- 	.page-row.row
+	//- 		.col-xl-3.col-lg-3
+	//- 			+acc-menu()
+	//- 		.col-lg
+	//- 			+acc-settings()
+	//- +s-contacts
+	//- +s-map()
+	//- +s-markets()
+	//- +s-contacts-form()
+	+s-form
+	+footer()

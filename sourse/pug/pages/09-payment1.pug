@@ -1,0 +1,40 @@
+extends layout/main.pug
+
+
+include ../blocks/s-content/_s-content.pug
+include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-map/_s-map.pug
+include ../blocks/s-basket/_s-basket.pug
+include ../blocks/s-why/_s-why.pug
+include ../blocks/s-contacts/_s-contacts.pug
+include ../blocks/s-markets/_s-markets.pug
+include ../blocks/s-contacts-form/_s-contacts-form.pug
+include ../blocks/side-menu/_side-menu.pug
+include ../blocks/s-payment/_s-payment.pug
+
+block variables
+	- let  mainPage= 'payment-body'
+block title
+	- let  title= 'Доставка и оплата'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+top-line()
+		+top-nav()
+	+breadcrumb('Главная',title)
+	+b.page-title.container
+		h1= `${title}`
+	.container
+		.page-row.row
+			.col-xl-3.col-lg-3
+				.d-lg-none.page-menu-toggle.btn.btn.btn-orange Меню
+				+side-menu('2')
+			.col-xl-6.col-lg
+				+s-payment('Оплата товара','1')
+	//- +s-contacts
+	//- +s-map()
+	//- +s-markets()
+	//- +s-contacts-form()
+	+s-form
+	+footer()

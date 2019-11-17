@@ -97,6 +97,18 @@ mixin soc()
 		+item('ya')
 		+item("ok")
 //- /scial buttons
+//- scial buttons
+mixin soc-2()
+	+b.soc
+		mixin item(i)
+			+e.A.item(href="#" target="_blank")&attributes(attributes)
+				+icon(i)
+		+item('vk')
+		+item('fb')
+		+item('google')
+		+item('ya')(class='active')
+		+item("ok")
+//- /scial buttons
 //- WP menu
 mixin mnu()
 	-

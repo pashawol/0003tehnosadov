@@ -1,0 +1,144 @@
+mixin s-markets()
+	// start s-markets
+	+b.SECTION.s-markets.section#s-markets&attributes(attributes)
+		.container
+			+e.main-row.row
+				mixin market-i()
+					.col-md-6
+						+e.item
+							+e.H5.item-head г.Москва, Дмитровское шоссе, д.62, с.5
+							+e.item-body
+								+e.map-row.row
+									.col-xxl-8
+										+e.map-wrap
+											img.res-i(src='img/@2x/market.jpg' alt='')
+									.col-xxl-4
+										+e.descr-row.row
+											.col-xxl-12.col-sm
+												+e.descr
+													p
+														strong Телефон: 
+														a(href='tel:+74951208090')
+															strong +7 495 
+															| 120 80 90
+													p E-mail: 
+														a(href='mailto:info@tehnosadov.ru') info@tehnosadov.ru
+												+e.descr
+													p
+														strong Режим работы:
+													p Пн-Пт - с 10:00 до 21:00
+													p Сб-Вс - с 10:00 до 18:00
+											.col-xxl-12.col-sm-auto
+												+e.btn.btn.btn-danger(href='#') Заказать звонок
+												+e.btn.btn.btn-danger(href='#') Написать сообщение
+								h5 Фото магазина на Дмитровском шоссе
+								+e.slider--js
+									.slide
+										+e.A.img-wrap(data-fancybox="gallery" href='img/market-img.jpg')
+											+e.IMG.slider-img(src='img/@2x/market-img.jpg' alt='')
+									.slide
+										+e.A.img-wrap(data-fancybox="gallery" href='img/market-img.jpg')
+											+e.IMG.slider-img(src='img/@2x/market-img.jpg' alt='')
+									.slide
+										+e.A.img-wrap(data-fancybox="gallery" href='img/market-img.jpg')
+											+e.IMG.slider-img(src='img/@2x/market-img.jpg' alt='')
+									.slide
+										+e.A.img-wrap(data-fancybox="gallery" href='img/market-img.jpg')
+											+e.IMG.slider-img(src='img/@2x/market-img.jpg' alt='')
+									.slide
+										+e.A.img-wrap(data-fancybox="gallery" href='img/market-img.jpg')
+											+e.IMG.slider-img(src='img/@2x/market-img.jpg' alt='')
+								h5 Подробное описание проезда 
+								+e.more-block
+									+e.more-head Пешком
+										+icon('more')
+									+e.more-body
+										+e.more-text Метро Медведково − Первый вагон из центра, из стеклянных дверей направо → Пройдя вперед 40 метров, вы увидите остановку «Метро Медведково». Автобусы № 771, 618, 606, 601, 278, 774, троллейбус № 80, до остановки «Кожгалантерейная фабрика». Время в пути 5 минут → Далее, вперед по ходу движения 100 метров, вдоль дома 33, до отдельностоящего 2-х этажного здания.
+									+e.more-head.border-top Общественным транспортом
+										+icon('more')
+									+e.more-body
+										+e.more-text Метро Медведково − Первый вагон из центра, из стеклянных дверей направо → Пройдя вперед 40 метров, вы увидите остановку «Метро Медведково». Автобусы № 771, 618, 606, 601, 278, 774, троллейбус № 80, до остановки «Кожгалантерейная фабрика». Время в пути 5 минут → Далее, вперед по ходу движения 100 метров, вдоль дома 33, до отдельностоящего 2-х этажного здания.
+									+e.more-head.border-top На автомобиле
+										+icon('more')
+									+e.more-body
+										+e.more-text Метро Медведково − Первый вагон из центра, из стеклянных дверей направо → Пройдя вперед 40 метров, вы увидите остановку «Метро Медведково». Автобусы № 771, 618, 606, 601, 278, 774, троллейбус № 80, до остановки «Кожгалантерейная фабрика». Время в пути 5 минут → Далее, вперед по ходу движения 100 метров, вдоль дома 33, до отдельностоящего 2-х этажного здания.
+								
+
+				+market-i()
+				+market-i()
+	// end s-markets
+
+mixin s-contacts-markets()
+	// start s-contacts-markets
+	+b.SECTION.s-contacts-markets.section#s-contacts-markets&attributes(attributes)
+		.container
+			+e.main-row.row
+				.col
+					+e.block
+						+e.title
+							h5 г.Москва, Дмитровское шоссе, д.62, с.5
+						+e.body
+							+e.in-row.row
+								+e.img-col.col-md-5
+									+e.img-wrap
+										img(src='img/@2x/mrket-cont1.jpg' alt='')
+								.col
+									+e.descr В 2018 году, нами открыт первый розничный магазин площадью 350 м2 по адресу г. Москва, Дмитровское шоссе 62с5 , на которой расположились витрины продукции таких именитых брендов, как Stihl, Husqvarna, Yanis, Champion, Patriot, Echo, Makita, Bosch, Huter, Hammer, Metabo, DeWALT, AL-KO, Greenworks и др.
+									+e.cont-block
+										p
+											strong Телефон: 
+											a(href='tel:+74951208090')
+												strong +7 495 
+												| 120 80 90
+										p E-mail: 
+											a(href='mailto:info@tehnosadov.ru') info@tehnosadov.ru
+									+e.cont-block
+										p
+											strong Режим работы:
+										p Пн-Пт - с 10:00 до 21:00
+										p Сб-Вс - с 10:00 до 18:00
+									+e.cont-block
+										p
+											strong Как найти:
+										p Станция метро Верхние Лихоборы, перейти Дмитровское шоссе, и двигаться в направлении ТЦ Колизей, вход по правой стороне здания
+				+e.map-col.col-xxl-4
+					+e.map-body
+						+e.map-wrap
+							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Add40456460e9e2b3970f9acef39811642a88468c74fb1f457df013dcc1fd55c4&amp;source=constructor" width="493" height="361" frameborder="0"></iframe>
+						+e.map-btn.btn.btn-orange(href='#') Проложить маршрут
+			+e.main-row.row
+				.col
+					+e.block
+						+e.title
+							h5 МО, г.Пушкино, Пушкинское шоссе, д.2
+						+e.body
+							+e.in-row.row
+								+e.img-col.col-md-5
+									+e.img-wrap
+										img(src='img/@2x/mrket-cont2.jpg' alt='')
+								.col
+									+e.descr В 2019 году открыли второй розничный магазин по адресу г.Пушкино, Пушкинское шоссе 2
+									+e.cont-block
+										p
+											strong Телефон: 
+											a(href='tel:+74951208090')
+												strong +7 495 
+												| 120 80 90
+										p E-mail: 
+											a(href='mailto:info@tehnosadov.ru') info@tehnosadov.ru
+									+e.cont-block
+										p
+											strong Режим работы:
+										p Пн-Пт - с 10:00 до 21:00
+										p Сб-Вс - с 10:00 до 18:00
+									+e.cont-block
+										p
+											strong Как найти:
+										p Станция метро Верхние Лихоборы, перейти Дмитровское шоссе, и двигаться в направлении ТЦ Колизей, вход по правой стороне здания
+				+e.map-col.col-xxl-4
+					+e.map-body
+						+e.map-wrap
+							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Add40456460e9e2b3970f9acef39811642a88468c74fb1f457df013dcc1fd55c4&amp;source=constructor" width="493" height="361" frameborder="0"></iframe>
+						+e.map-btn.btn.btn-orange(href='#') Проложить маршрут
+			
+	// end s-contacts-markets

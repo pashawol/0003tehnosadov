@@ -1,0 +1,29 @@
+mixin acc-menu(t)
+	// start acc-menu
+	+b.acc-menu
+		if t == '1'
+			+e.title
+				h5 Иванов Иван Иванович
+				h5 ivanovii@yandex.ru
+		if t == '2'
+			+e.title Общее положение
+		+e.nav
+			if t == '1'
+				+e.A.nav-item.active(href='#') Личные данные
+				+e.A.nav-item(href='#') Мои заказы
+				+e.A.nav-item(href='#') Отзывы
+				+e.A.nav-item(href='#') Подписки
+			if t == '2'
+				+e.A.nav-item.active(href='#') Ремонт аэраторов
+				+e.A.nav-item(href='#') Ремонт бензопил
+				+e.A.nav-item(href='#') Ремонт газонокосилок
+				+e.A.nav-item(href='#') Ремонт генераторов
+				+e.A.nav-item(href='#') Ремонт измельчителей
+				+e.A.nav-item(href='#') Ремонт культиваторов
+				+e.A.nav-item(href='#') Ремонт кусторезов
+				+e.A.nav-item(href='#') Ремонт воздуходувов
+				+e.A.nav-item(href='#') Ремонт мотопомп
+				+e.A.nav-item(href='#') Ремонт снегоуборщиков
+				+e.A.nav-item(href='#') Ремонт тракторов
+
+	// end acc-menu

@@ -53,6 +53,30 @@ body {
 	&.order-body{
 		background-color: #E5E5E5;
 	}
+	&.payment-body{
+		.s-form{
+			margin-top: 0;
+		}
+		.page-title{
+			margin-bottom: rem(10);
+		}
+	}
+	&.service-body{
+		.s-form{
+			margin-top: 0;
+		}
+		.page-title{
+			margin-bottom: rem(20);
+		}
+	}
+	&.contacts-body{
+		.s-form{
+			margin-top: 0;
+		}
+		.breadcrumb{
+			margin-bottom: rem(20);
+		}
+	}
 }
 
  
@@ -538,3 +562,16 @@ h1,h2{
 // 	.panel-white__head
 // 	.panel-white__body
 	
+
+.page-row{
+	@include roww(5);
+	margin-bottom: rem(20);
+}
+
+.page-menu-toggle{
+	width: 100%;
+	font-size: rem(20);
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-bottom: rem(5);
+}

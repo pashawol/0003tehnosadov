@@ -1,0 +1,46 @@
+mixin acc-settings()
+	// start acc-settings
+	+b.SECTION.acc-settings.section#acc-settings&attributes(attributes)
+		+e.H5.title Личные данные
+		+e.block
+			+form-wrap
+				mixin setting(t, a, n, v)
+					+e.form-row.row
+						.col-sm-5
+							+e.input-title=t
+						.col-sm
+							+e.value-wrap
+								+input('',`${a}`,'',`${n}`)(value=`${v}` class='disabled')
+									+e.BUTTON.change(type="button")
+										+icon('change')
+				+setting('ФИО:','text','name','Иванов Иван Иванович')
+				+setting('Телефон:','tel','tel','+7 (900) 900 90 90')
+				+setting('Электронная почта:','text','email','ivanovii@yandex.ru')
+				+setting('Пароль:','text','password','*********')
+				+setting('Дата рождения:','text','date','01.01.1950')
+				+e.form-row.row
+					.col-5
+						+e.input-title Пол:
+					.col
+						+e.value-wrap
+							+in-c('radio','Мужской','sex')(checked)
+							+in-c('radio','Женский','sex')
+		+e.H5.title Адреса доставки
+		+e.block
+			+e.adress-row
+					+e.adress г. Москва, ул. Московская, д. 10, под. 5, кв. 200
+					+e.TEXTAREA.adress.off г. Москва, ул. Московская, д. 10, под. 5, кв. 200
+					+e.BUTTON.change(type="button")
+						+icon('change')
+			+e.A.add-adress(href='#')
+				+icon('plus')
+				| Добавить адрес доставки
+		+e.H5.title Привязка социальных сетей
+		+e.block
+			+e.text Привяжите учетную запись социальной сети и используйте ee для авторизации
+			+soc-2()
+		+e.block
+			+e.A.text(href='#') Удалить учётную запись
+
+
+	// end acc-settings
