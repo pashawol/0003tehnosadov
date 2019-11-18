@@ -1,4 +1,5 @@
 .s-payment {
+	max-width: rem(776);
 	@extend .panel-white;
 	padding: 0;
 
@@ -17,12 +18,12 @@
 		@extend .panel-white__body;
 	}
 
+	p{
+		font-weight: 500;
+		margin: 0;
+	}
 	&__text-block{
 		margin-bottom: rem(20);
-		font-weight: 500;
-		p{
-			margin: 0;
-		}
 	}
 
 	&__deliver{
@@ -30,6 +31,8 @@
 			margin-bottom: rem(20);
 		}
 		&-item{
+			display: block;
+			color: $body-color;
 			.row{
 				@include roww(5);
 				align-items: center;
@@ -41,6 +44,10 @@
 				padding: rem(8) rem(8) rem(8) rem(20);
 			}
 			margin-bottom: rem(10);
+			&:hover{
+				text-decoration: none;
+				color: $body-color;
+			}
 		}
 		&-title{
 			font-weight: 700;
@@ -65,10 +72,6 @@
 				@include media-breakpoint-up(md){
 					font-size: rem(40);
 				}
-			}
-			&:hover{
-				text-decoration: none;
-				color: $body-color;
 			}
 		}
 		&-text{

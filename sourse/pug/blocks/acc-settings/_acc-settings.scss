@@ -64,6 +64,7 @@
 		}
 	}
 	&__change{
+
 		background-color: transparent;
 		border: none;
 		outline: none !important;
@@ -78,11 +79,12 @@
 		}
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
 		max-width: rem(535);
 		margin-bottom: rem(20);
 	}
 	&__adress{
+		padding: rem(2);
 		width: 100%;
 		resize: none;
 		font-weight: 500;

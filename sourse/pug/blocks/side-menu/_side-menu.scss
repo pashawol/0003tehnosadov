@@ -5,6 +5,9 @@
 		display: none;
 		margin-bottom: rem(10);
 	}
+	@include media-breakpoint-up(lg){
+		display: block !important;
+	}
 
 	&__item{
 		@extend .panel-white__head;
