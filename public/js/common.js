@@ -303,10 +303,15 @@ function eventHandler() {
 	});
 	$('.form-wrap__change').click(function () {
 		$(this).siblings('input, textarea').toggleClass('disabled');
+
+		if (!$(this).siblings('input, textarea').hasClass('disabled')) {
+			$(this).siblings('input, textarea').focus();
+		}
 	});
 	$('.acc-settings__change').click(function () {
 		$(this).siblings('input, textarea').toggleClass('off');
 		$(this).siblings('div').toggleClass('d-none');
+		$(this).siblings('input, textarea').focus();
 	});
 	$('.s-catalog__slider-3--js').slick(_objectSpread({}, defaultSlide, {
 		slidesToShow: 1,

@@ -3,6 +3,9 @@
 		margin-bottom: rem(10);
 		display: none;
 	}
+	@include media-breakpoint-up(lg){
+		display: block !important;
+	}
 	@extend .panel-white;
 	padding: 0;
 	overflow: hidden;
