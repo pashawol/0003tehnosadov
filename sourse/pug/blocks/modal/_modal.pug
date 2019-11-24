@@ -1,46 +1,126 @@
 
 mixin modal() 
- 
-	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
-	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
-	//- 			+b.wrap-polite
-	//- 				+b.custom-input.polite
-	//- 					+b.LABEL.custom-input.polite
-	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
-	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
-
-	//- 						| на хранение и обработку   персональных данных
-	
- 
-
-	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			br
-	//- 			.h2 Заявка принята
-	//- 			br
-	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
+  
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
-			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
+		+b.modal-cities(id="modal-cities" class="  modal-win modal-form" )
+			+e.head
+				.row
+					.col-md-auto
+						.strong.text-orange Выберите ваш город
+					.col
+						+form-search()(class="d-none")
+			+e.body
+				mixin item(t, sh)
+					+e.item&attributes(attributes)
+						if sh
+							+icon("shipping-1")
+						| 
+						= t
+				div
+					+item('Москва', "sh")(class="strong")
+					+item('Санкт-Петербург')(class="strong")
+					+item('Нижний Новгород')(class="strong")
+			
+					+item('Москва')(class="strong")
+					+item('Санкт-Петербург')(class="strong")
+					+item('Нижний Новгород')(class="strong")
+				- for (var y = 0; y < 3; y++)
+					- for (var x = 0; x < 3; x++)
+						+item('Москва')
+						+item('Санкт-Петербург')
+						+item('Нижний Новгород')
+				- for (var z = 0; z < 6; z++)
+					- for (var y = 0; y < 3; y++)
+						- for (var x = 0; x < 3; x++)
+							+item('Москва', "sh")
+							+item('Санкт-Петербург')
+							+item('Нижний Новгород')
+
+		+form-wrap()(id="modal-one-click" class="modal-one-click  modal-win modal-form" )
+			.strong.mb-3 Покупка в 1 клик
+			// start s-basket
+			+b.s-basket.mb-3
+				+e.head.panel-white.d-none.d-lg-block
+					.row
+						+e.col.col Товар
+						+e.col.col-auto Количество
+						+e.col.col-auto Цена, руб.
+				mixin item(i)
+					+e.item.panel-white
+						.row
+							+e.col.col-lg
+								.row
+									.col-auto
+										+e.img-wrap(href="#")
+											img.res-i(src=`img/@2x/prod-${i}.jpg`, alt="")
+									.col
+										a(href="#").text-body Бензопила STIHL MS 260-16" 11212000423
+							+e.col.col-lg-auto(data-title="Количество")
+								+b.block-add
+									input(type="number"  value="1")
+									+e.btn-wrap
+										+e.BUTTON.btn--plus(type="button")
+										+e.BUTTON.btn--minus(type="button")
+							+e.col.col-lg-auto(data-title=" Цена, руб.") 30 990
+				+item("1") 
+			// end s-basket
+			.row.align-items-center.mb-3
+				.col.strong.mb-2 Итого:
+				.col-auto.strong.text-orange.h2  104 880 руб.
+			.panel-white.mb-3
+				.strong.mb-3 Я знаю промокод:
+				.row
+					.col-sm-8
+						+input("")
+					.col
+						+e.BUTTON.btn.btn-dark.btn-block(type="submit"  ) Применить
+			.h5.strong Укажите контактную информацию
+			+input("ФИО*")
+			+input("Ваш телефон","tel")
+			+input("E-mail*","email")
 			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
-		// #modal-call
+			+e.BUTTON.btn.btn-primary.btn-block(type="submit"  ) Купить
+		// #modal-one-click
+		+b.modal-win.modal-basket(id="modal-basket" class="  modal-win modal-form" )
+			+e.head.h5.strong Корзина
+			+e.body
+				- for (var x = 1; x < 3; x++)
+					.modal-basket__item
+						.row.align-items-center
+							.col-auto
+								.modal-basket__img-wrap(href="#")
+									img.res-i(src=`img/@2x/prod-${x}.jpg`, alt="")
+							.col
+								a(href="#").text-body Бензопила STIHL MS 260-16" 11212000423
+							.col.text-center 42 900
+								br
+								| руб.
+			+e.footer
+				.row.align-items-center
+					.col-md-6.text-orange.h2.strong 104 880 руб.
+					.col-md-6
+						button.btn.btn-success.btn-lg.btn-block.mb-2(type="button") Оформить
+		// #modal-basket
+		
+		+b.modal-win.modal-lk(id="modal-lk" class="  modal-win modal-form" ).p-0
+			+e.head.strong Личный кабинет
+			+e.body
+				.row.align-items-center.justify-content-between
+					.col-auto
+						a(href="#").text-orange.h5.strong Войти
+					.col-auto
+						button.btn.btn-outline-orange.btn-lg.btn-block.mb-2.text-body(type="button")  Зарегистрироваться
+		
+			+e.footer
+				.mb-2
+					a.text-body(href="#") Профиль
+				
+				.mb-2
+					a.text-body(href="#") Заказы
+				
+				.mb-2
+					a.text-body(href="#") Политика конфидициальности
+				
+		// #modal-lk
+
 	// modal

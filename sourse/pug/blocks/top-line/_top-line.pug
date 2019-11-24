@@ -5,6 +5,20 @@ mixin form-search()
 			input(type="text" placeholder="Что будем искать?")
 			button 
 				+icon("search")
+			+e.result&attributes(attributes)
+				+e.result-group
+					+e.group-item.strong Категории
+					+e.group-item Инструмент для работы в лесу ← Родительский раздел ← Родительский раздел
+					+e.group-item Сумки, футляры
+					+e.group-item Перчатки 
+			
+				+e.result-group
+					+e.group-item.strong Товары
+					+e.group-item Высоторезы
+					+e.group-item Комбисистема
+					+e.group-item Садовые измельчители
+					+e.group-item Опрыскиватели и распылители
+			
 mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
@@ -17,9 +31,9 @@ mixin top-line()
 				.col-xl.order-xl-0.order-last
 					+form-search
 				.col-xl-auto.col-lg.col-auto
-					+b.city-block
+					+b.city-block.link-modal(href="#modal-cities")
 						+icon("mark")
-						+e.text.d-none.d-lg-block Москва
+						+e.text.text-body.d-none.d-lg-block Москва
 				.col-auto
 					+b.tel-top(href="tel:+74951208090")
 						+icon("tel")
@@ -27,7 +41,7 @@ mixin top-line()
 							+e.DIV.text +7 495 120 80 90
 							+e.DIV.small пн.-вс. с 10:00 до 21:00
 				.col-auto
-					+e.link
+					+e.link.link-modal(href="#modal-lk")
 						+icon("login")
 						+e.DIV.link-text.strong.d-none.d-lg-block Кабинет
 
@@ -39,7 +53,7 @@ mixin top-line()
 						+e.DIV.link-text.strong.d-none.d-lg-block Сравнения
 	
 				.col-auto
-					+e.link--basket
+					+e.link--basket.link-modal(href="#modal-basket")
 						+e.icon-wrap
 							+icon("basket")
 							+e.link-count--basket 99

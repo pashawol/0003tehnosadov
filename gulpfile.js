@@ -12,6 +12,7 @@ global.$ = {
 	tabify: require('gulp-tabify'),
 	envDev: false,
 	gp: require('gulp-load-plugins' )(),
+	gcmq: require('gulp-group-css-media-queries'),
 	browserSync: require('browser-sync').create(), 
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
@@ -29,15 +30,15 @@ $.gulp.task('libs', $.gulp.series('cleanlibs','copylibs',));
 		 
 $.gulp.task('default', $.gulp.series(
 	// $.gulp.parallel('svg','pug','scripts:lib','scripts','file'),
-	// $.gulp.parallel('file'),
+	$.gulp.parallel('img'),
 
 	$.gulp.parallel(
+		'sass',
 		'svg',
-		'pug',
-		'img',
+		'pug', 
 		'libs',
 		'scripts', 
 		'scripts:common',
 		),
-	$.gulp.parallel('sass','watch','serv')
+	$.gulp.parallel('watch','serv')
 	));

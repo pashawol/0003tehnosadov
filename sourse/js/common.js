@@ -118,7 +118,7 @@ const JSCCommon = {
 	showSearch() {
 		
 		let toggle = document.querySelector(".toggle-search--js");
-		let dropdown = $(".form-search");
+		let dropdown = $(".top-line .form-search");
 		toggle.addEventListener("click", ()=>{ 
 			dropdown.toggle();
 			dropdown.find("input").focus();
