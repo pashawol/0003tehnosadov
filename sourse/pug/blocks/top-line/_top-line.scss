@@ -27,6 +27,7 @@
 
   &__link{
     text-decoration: none !important;
+    display: block;
     @include media-breakpoint-up(xxl) {
 
       margin-left: rem(50);
